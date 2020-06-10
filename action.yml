@@ -1,0 +1,5 @@
+name: "Composite Action Test v0"
+description: "Run a simple composite action"
+runs:
+    using: "composite"
+    runs: echo uwu
