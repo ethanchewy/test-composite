@@ -1,6 +1,8 @@
-name: "Composite Action Test v0"
+name: "Composite Action Test v2"
 description: "Run a simple composite action"
 runs:
     using: "composite"
     steps: 
-        - run: echo uwu
+        - run: beep
+        - run: beep boop
+        - run: beep boop boop
