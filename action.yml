@@ -8,5 +8,5 @@ runs:
     using: "composite"
     steps: 
         - run: echo hello {{inputs.your_name}}
-        - run: echo beep boop
-        - run: echo beep boop boop
+        - run: echo sha {{github.sha}}
+        - run: echo os {{runner.os}}
