@@ -7,8 +7,8 @@ inputs:
 runs:
     using: "composite"
     steps: 
-        - run: echo hello {{inputs.your_name}}
-        - run: echo sha {{github.sha}}
-        - run: echo os {{runner.os}}
+        - run: echo hello ${{inputs.your_name}}
+        - run: echo sha ${{github.sha}}
+        - run: echo os ${{runner.os}}
         - run: |
             echo job index ${{ strategy.job-index }}
