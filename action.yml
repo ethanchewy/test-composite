@@ -3,6 +3,6 @@ description: "Run a simple composite action"
 runs:
     using: "composite"
     steps: 
-        - run: beep
-        - run: beep boop
-        - run: beep boop boop
+        - run: echo beep
+        - run: echo beep boop
+        - run: echo beep boop boop
