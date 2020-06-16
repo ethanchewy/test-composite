@@ -1,8 +1,12 @@
 name: "Composite Action Test v2"
 description: "Run a simple composite action"
+inputs:
+  your_name:
+    description: 'lol'
+    default: 'Ethan'
 runs:
     using: "composite"
     steps: 
-        - run: echo beep
+        - run: echo hello {{inputs.your_name}}
         - run: echo beep boop
         - run: echo beep boop boop
