@@ -11,4 +11,4 @@ runs:
         - run: echo sha {{github.sha}}
         - run: echo os {{runner.os}}
         - run: |
-          echo job index ${{ strategy.job-index }}
+            echo job index ${{ strategy.job-index }}
