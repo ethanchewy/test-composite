@@ -1,5 +1,8 @@
 name: "Composite Action Test v2"
 description: "Run a simple composite action"
+env:
+  NAME2: test2
+  SERVER: development
 inputs:
   your_name:
     description: 'lol'
@@ -12,3 +15,5 @@ runs:
         - run: echo os ${{runner.os}}
         - run: |
             echo job index ${{ strategy.job-index }}
+        - run: echo Name2 $NAME2
+        - run: echo Server $SERVER
