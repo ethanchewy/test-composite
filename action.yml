@@ -1,13 +1,13 @@
 name: "Composite Action Test"
 description: "Run a simple composite action"
-env:
-  NAME2: test2
-  SERVER: development
 inputs:
   your_name:
     description: 'lol'
     default: 'Ethan'
 runs:
+    env:
+      NAME2: test2
+      SERVER: development
     using: "composite"
     steps: 
         - run: echo hello ${{inputs.your_name}}
