@@ -1,4 +1,4 @@
-name: "Composite Action Test v2"
+name: "Composite Action Test"
 description: "Run a simple composite action"
 env:
   NAME2: test2
