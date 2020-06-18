@@ -15,5 +15,7 @@ runs:
         - run: echo os ${{runner.os}}
         - run: |
             echo job index ${{ strategy.job-index }}
-        - run: echo Name2 $NAME2
-        - run: echo Server $SERVER
+        - name: test composite action env
+          run: echo Name2 $NAME2
+        - name: test composite action env 2
+          run: echo Server $SERVER
