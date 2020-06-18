@@ -19,3 +19,7 @@ runs:
           run: echo Name2 $NAME2
         - name: test composite action env 2
           run: echo Server $SERVER
+        - name: test composite action env 3
+          run: echo Server changed to $SERVER
+          env:
+            SERVER: templeos
