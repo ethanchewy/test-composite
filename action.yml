@@ -23,3 +23,5 @@ runs:
           run: echo Server changed to $SERVER
           env:
             SERVER: templeos
+        - name: test composite action env 3
+          run: echo Composite Action Server: $SERVER
