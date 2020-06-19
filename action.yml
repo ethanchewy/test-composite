@@ -24,4 +24,4 @@ runs:
           env:
             SERVER: templeos
         - name: test composite action env 3
-          run: echo Composite Action Server: $SERVER
+          run: echo Composite Action Server $SERVER
