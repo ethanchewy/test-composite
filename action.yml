@@ -15,13 +15,14 @@ runs:
         - run: echo os ${{runner.os}}
         - run: |
             echo job index ${{ strategy.job-index }}
-        - run: echo Name2 $NAME2
-        - run: echo Server $SERVER
-        - run: echo Server changed to $SERVER
+        - run: echo Name2 ${{ env.NAME2 }}
+        - run: echo Server ${{ env.SERVER }}
+        - run: echo Server changed to ${{ env.SERVER }}
           env:
             SERVER: templeos
-        - run: echo Composite Action Server $SERVER
-        - run: echo Name3 $NAME3
-        - run: echo Name3 changed to $NAME3
+        - run: echo Composite Action Server ${{ env.SERVER }}
+        - run: echo Name3 ${{ env.NAME3 }}
+        - run: echo Name3 not using environment context $NAME3
+        - run: echo Name3 changed to ${{ env.NAME3 }}
           env:
             NAME3: fdasdfadsf
