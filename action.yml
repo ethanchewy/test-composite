@@ -15,19 +15,13 @@ runs:
         - run: echo os ${{runner.os}}
         - run: |
             echo job index ${{ strategy.job-index }}
-        - name: test composite action env
-          run: echo Name2 $NAME2
-        - name: test composite action env 2
-          run: echo Server $SERVER
-        - name: test composite action env 3
-          run: echo Server changed to $SERVER
+        - run: echo Name2 $NAME2
+        - run: echo Server $SERVER
+        - run: echo Server changed to $SERVER
           env:
             SERVER: templeos
-        - name: test composite action env 4
-          run: echo Composite Action Server $SERVER
-        - name: test composite env flow 5
-          run: echo Name3 $NAME3
-        - name: test composite env flow 5
-          run: echo Name3 changed to $NAME3
+        - run: echo Composite Action Server $SERVER
+        - run: echo Name3 $NAME3
+        - run: echo Name3 changed to $NAME3
           env:
             NAME3: fdasdfadsf
