@@ -7,9 +7,13 @@ inputs:
   your_name:
     description: 'lol'
     default: 'Ethan'
+outputs:
+  random-number: 
+    description: "random number"
 runs:
     using: "composite"
     steps: 
+        - run: echo "::set-output name=random-number::$(echo $RANDOM)"
         - run: echo hello ${{inputs.your_name}}
         - run: echo sha ${{github.sha}}
         - run: echo os ${{runner.os}}
