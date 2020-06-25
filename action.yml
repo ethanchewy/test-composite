@@ -7,14 +7,14 @@ inputs:
   your_name:
     description: 'lol'
     default: 'Ethan'
-outputs:
-  random-number: 
-    description: "random number"
+# outputs:
+#   random-number: 
+#     description: "random number"
 runs:
     using: "composite"
     steps: 
-        - run: echo "::set-output name=random-number::$(echo $RANDOM)"
-        - run: echo hello ${{inputs.your_name}}
+#         - run: echo "::set-output name=random-number::$(echo $RANDOM)"
+#         - run: echo hello ${{inputs.your_name}}
         - run: echo sha ${{github.sha}}
         - run: echo os ${{runner.os}}
         - run: |
@@ -26,7 +26,7 @@ runs:
             SERVER: templeos
         - run: echo Composite Action Server ${{ env.SERVER }}
         - run: echo Name3 ${{ env.NAME3 }}
-        - run: echo Name3 not using environment context $NAME3
+        - run: echo Name3 not using environment context {{ env.NAME3 }}
         - run: echo Name3 changed to ${{ env.NAME3 }}
           env:
             NAME3: fdasdfadsf
