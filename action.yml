@@ -14,9 +14,9 @@ runs:
 #         run: echo "::set-output name=random_id::$(echo $RANDOM)"
 #       - id: food
 #         run: echo "::set-output name=test::strawberry"
-      - run: echo hello ${{inputs.your_name}}
-      - run: echo sha ${{github.sha}}
-      - run: echo os ${{runner.os}}
+#       - run: echo hello ${{inputs.your_name}}
+#       - run: echo sha ${{github.sha}}
+#       - run: echo os ${{runner.os}}
 #         - run: |
 #             echo job index ${{ strategy.job-index }}
 #         - run: echo Name2 ${{ env.NAME2 }}
