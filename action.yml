@@ -21,10 +21,11 @@ runs:
 #             echo job index ${{ strategy.job-index }}
 #         - run: echo Name2 ${{ env.NAME2 }}
 #         - run: echo Server ${{ env.SERVER }}
-      - run: echo Composite Action Server ${{ env.SERVER }}
-      - run: echo Server changed to ${{ env.SERVER }}
+#       - run: echo Composite Action Server ${{ env.SERVER }}
+      - run: echo '::set-env name=baz::this is baz'
         env:
-          SERVER: templeos
+          bar: echo printenv|sort 
+          
 #         - run: echo Composite Action Server ${{ env.SERVER }}
 #         - run: echo Name3 ${{ env.NAME3 }}
 # #         - run: echo Name3 not using environment context ${{ env.NAME3 }}
