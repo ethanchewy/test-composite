@@ -9,7 +9,10 @@ inputs:
 #   food: ${{ steps.food.outputs.test }}
 runs:
     using: "composite"
-    steps: 
+    steps:
+      - run: printenv|sort
+      - run: echo '::set-env name=foo::this is foo 3'
+      - run: printenv|sort
 #       - id: random_number_generator
 #         run: echo "::set-output name=random_id::$(echo $RANDOM)"
 #       - id: food
@@ -22,11 +25,11 @@ runs:
 #         - run: echo Name2 ${{ env.NAME2 }}
 #         - run: echo Server ${{ env.SERVER }}
 #       - run: echo Composite Action Server ${{ env.SERVER }}
-      - run: |
-          echo '::set-env name=baz::this is baz'
-          printenv|sort
-        env:
-          bar: this is bar 
+#       - run: |
+#           echo '::set-env name=baz::this is baz'
+#           printenv|sort
+#         env:
+#           bar: this is bar 
 #         - run: echo Composite Action Server ${{ env.SERVER }}
 #         - run: echo Name3 ${{ env.NAME3 }}
 # #         - run: echo Name3 not using environment context ${{ env.NAME3 }}
