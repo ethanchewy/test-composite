@@ -24,7 +24,7 @@ runs:
 #       - run: echo Composite Action Server ${{ env.SERVER }}
       - run: echo '::set-env name=baz::this is baz'
         env:
-          bar: echo printenv|sort 
+          bar: printenv|sort 
           
 #         - run: echo Composite Action Server ${{ env.SERVER }}
 #         - run: echo Name3 ${{ env.NAME3 }}
