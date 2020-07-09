@@ -21,5 +21,7 @@ runs:
           foo: this is foo 2
       - run: echo '::set-env name=foo::this is foo 3'
       - run: echo new env.foo for everything ${{ env.foo }}
-      - run: echo "::set-output name=random_id::$(echo $RANDOM)"
-      - run: echo "::set-output name=test::strawberry"
+      - id: random_number_generator
+        run: echo "::set-output name=random_id::$(echo $RANDOM)"
+      - id: food
+        run: echo "::set-output name=test::strawberry"
