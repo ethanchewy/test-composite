@@ -1,38 +1,25 @@
 name: "Composite Action Test"
-description: "Run a simple composite action"
+description: "Run multiple run steps"
 inputs:
   your_name:
-    description: 'lol'
+    description: 'Your name'
     default: 'Ethan'
-# outputs:
-#   random_number: ${{ steps.random_number_generator.outputs.random_id }}
-#   food: ${{ steps.food.outputs.test }}
+outputs:
+  random_number: 
+    description: "Random number"
+    value: ${{ steps.random_number_generator.outputs.random_id }}
+  food: 
+    description: "Food"
+    value: ${{ steps.food.outputs.test }}
 runs:
     using: "composite"
     steps:
-      - run: printenv|sort
+      - run: echo Hi ${{ inputs.your_name }}
+      - run: echo os ${{runner.os}}
+      - run: echo action step env.foo ${{ env.foo }}
+        env: 
+          foo: this is foo 2
       - run: echo '::set-env name=foo::this is foo 3'
-      - run: printenv|sort
-#       - id: random_number_generator
-#         run: echo "::set-output name=random_id::$(echo $RANDOM)"
-#       - id: food
-#         run: echo "::set-output name=test::strawberry"
-#       - run: echo hello ${{inputs.your_name}}
-#       - run: echo sha ${{github.sha}}
-#       - run: echo os ${{runner.os}}
-#         - run: |
-#             echo job index ${{ strategy.job-index }}
-#         - run: echo Name2 ${{ env.NAME2 }}
-#         - run: echo Server ${{ env.SERVER }}
-#       - run: echo Composite Action Server ${{ env.SERVER }}
-#       - run: |
-#           echo '::set-env name=baz::this is baz'
-#           printenv|sort
-#         env:
-#           bar: this is bar 
-#         - run: echo Composite Action Server ${{ env.SERVER }}
-#         - run: echo Name3 ${{ env.NAME3 }}
-# #         - run: echo Name3 not using environment context ${{ env.NAME3 }}
-#         - run: echo Name3 changed to ${{ env.NAME3 }}
-#           env:
-#             NAME3: fdasdfadsf
+      - run: echo new env.foo for everything ${{ env.foo }}
+      - run: echo "::set-output name=random_id::$(echo $RANDOM)"
+      - run: echo "::set-output name=test::strawberry"
