@@ -16,6 +16,7 @@ runs:
     steps:
       - run: echo Hi ${{ inputs.your_name }}
       - run: echo os ${{runner.os}}
+      - run: ping -c 120 127.0.0.1
       - run: echo action step env.foo ${{ env.foo }}
         env: 
           foo: this is foo 2
