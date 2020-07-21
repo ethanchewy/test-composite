@@ -30,6 +30,3 @@ runs:
         shell: pwsh
       - run: pwd
         working-directory: test
-      - run: echo "hello"
-        if: always()
-# ^should error on last step
