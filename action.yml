@@ -26,3 +26,10 @@ runs:
         run: echo "::set-output name=random_id::$(echo $RANDOM)"
       - id: food
         run: echo "::set-output name=test::strawberry"
+      - run: dir
+        shell: pwsh
+      - run: pwd
+        working-directory: test
+      - run: echo "hello"
+        if: always()
+# ^should error on last step
