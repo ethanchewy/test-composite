@@ -16,7 +16,6 @@ runs:
     steps:
       - run: echo Hi ${{ inputs.your_name }}
       - run: echo os ${{runner.os}}
-      - run: dir
       - run: echo action step env.foo ${{ env.foo }}
         env: 
           foo: this is foo 2
