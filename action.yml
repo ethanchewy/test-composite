@@ -21,6 +21,8 @@ runs:
           foo: this is foo 2
       - id: composite2
         uses: ethanchewy/composite2@v1
+        with: 
+          favorite_animal: "frog"
 #       - run: echo '::set-env name=foo::this is foo 3'
 #       - run: echo new env.foo for everything ${{ env.foo }}
 #       - id: random_number_generator
