@@ -14,6 +14,7 @@ outputs:
 runs:
     using: "composite"
     steps:
+      - uses: actions/checkout@v2
       - run: echo Hi ${{ inputs.your_name }}
       - run: echo os ${{runner.os}}
       - run: echo action step env.foo ${{ env.foo }}
