@@ -1,19 +1,31 @@
 name: "Composite Action Test"
-description: "Run a simple composite action"
+description: "Run multiple run steps"
 inputs:
   your_name:
-    description: 'lol'
+    description: 'Your name'
     default: 'Ethan'
-# outputs:
-#   random_number: ${{ steps.random_number_generator.outputs.random_id }}
-#   food: ${{ steps.food.outputs.test }}
+outputs:
+  random_number: 
+    description: "Random number"
+    value: ${{ steps.random_number_generator.outputs.random_id }}
+  food: 
+    description: "Food"
+    value: ${{ steps.food.outputs.test }}
 runs:
     using: "composite"
-    steps: 
-      - env:
-          bar: this is bar 
+    steps:
+      - uses: actions/checkout@v2
         shell: bash
-        run: |
-          echo '::set-env name=baz::this is baz'
-          printenv|sort
-        
+      - run: echo Hi ${{ inputs.your_name }}
+        shell: bash
+      - run: echo os ${{runner.os}}
+        shell: bash
+      - run: echo action step env.foo ${{ env.foo }}
+        env: 
+          foo: this is foo 2
+        shell: bash
+      - id: composite2
+        uses: ethanchewy/composite2@v1
+        shell: bash
+        with: 
+          favorite_animal: "frog"
