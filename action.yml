@@ -14,11 +14,11 @@ outputs:
 runs:
     using: "composite"
     steps:
-      - run: echo test before checkout
-        shell: bash
-      - uses: actions/checkout@v2
-      - run: echo test after checkout
-        shell: bash
+#       - run: echo test before checkout
+#         shell: bash
+#       - uses: actions/checkout@v2
+#       - run: echo test after checkout
+#         shell: bash
       - run: echo Hi ${{ inputs.your_name }}
         shell: bash
       - run: echo os ${{runner.os}}
