@@ -15,5 +15,5 @@ runs:
         shell: bash
         run: |
           echo '::set-env name=baz::this is baz'
-          echo printenv|sort
+          printenv|sort
         
