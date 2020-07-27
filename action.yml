@@ -32,3 +32,8 @@ runs:
       - id: food
         run: echo "::set-output name=test::strawberry"
         shell: bash
+      - run: dir
+        shell: pwsh
+      - run: pwd
+        working-directory: test
+        shell: bash
