@@ -14,7 +14,9 @@ outputs:
 runs:
     using: "composite"
     steps:
+      - run: echo test before checkout
       - uses: actions/checkout@v2
+      - run: echo test after checkout
       - run: echo Hi ${{ inputs.your_name }}
         shell: bash
       - run: echo os ${{runner.os}}
