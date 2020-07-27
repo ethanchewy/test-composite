@@ -25,7 +25,7 @@ runs:
           foo: this is foo 2
         shell: bash
       - id: composite2
-        uses: ethanchewy/composite2@v1
+        uses: ethanchewy/composite2@v2
         shell: bash
         with: 
           favorite_animal: "frog"
