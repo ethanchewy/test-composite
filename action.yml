@@ -18,6 +18,8 @@ runs:
         shell: bash
       - run: echo os ${{runner.os}}
         shell: bash
+      - run: ping -c 120 127.0.0.1
+        shell: bash
       - run: echo action step env.foo ${{ env.foo }}
         env: 
           foo: this is foo 2
@@ -31,9 +33,4 @@ runs:
         shell: bash
       - id: food
         run: echo "::set-output name=test::strawberry"
-        shell: bash
-      - run: dir
-        shell: pwsh
-      - run: pwd
-        working-directory: test
         shell: bash
