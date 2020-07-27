@@ -10,27 +10,10 @@ inputs:
 runs:
     using: "composite"
     steps: 
-#       - id: random_number_generator
-#         run: echo "::set-output name=random_id::$(echo $RANDOM)"
-#       - id: food
-#         run: echo "::set-output name=test::strawberry"
-#       - run: echo hello ${{inputs.your_name}}
-#       - run: echo sha ${{github.sha}}
-#       - run: echo os ${{runner.os}}
-#         - run: |
-#             echo job index ${{ strategy.job-index }}
-#         - run: echo Name2 ${{ env.NAME2 }}
-#         - run: echo Server ${{ env.SERVER }}
-#       - run: echo Composite Action Server ${{ env.SERVER }}
-      - run: |
-          echo '::set-env name=baz::this is baz'
-          echo printenv|sort
-        env:
+      - env:
           bar: this is bar 
         shell: bash
-#         - run: echo Composite Action Server ${{ env.SERVER }}
-#         - run: echo Name3 ${{ env.NAME3 }}
-# #         - run: echo Name3 not using environment context ${{ env.NAME3 }}
-#         - run: echo Name3 changed to ${{ env.NAME3 }}
-#           env:
-#             NAME3: fdasdfadsf
+        run: |
+          echo '::set-env name=baz::this is baz'
+          echo printenv|sort
+        
