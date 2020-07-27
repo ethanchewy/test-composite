@@ -15,7 +15,6 @@ runs:
     using: "composite"
     steps:
       - uses: actions/checkout@v2
-        shell: bash
       - run: echo Hi ${{ inputs.your_name }}
         shell: bash
       - run: echo os ${{runner.os}}
@@ -26,6 +25,5 @@ runs:
         shell: bash
       - id: composite2
         uses: ethanchewy/composite2@v2
-        shell: bash
         with: 
           favorite_animal: "frog"
