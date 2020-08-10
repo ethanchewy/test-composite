@@ -28,8 +28,6 @@ runs:
           foo: this is foo 2
         shell: bash
       - uses: actions/checkout@v2
-        with:
-          repository: 'ethanchewy/composite2@v2'
       - id: composite2
         uses: ethanchewy/composite2@v2
         with: 
